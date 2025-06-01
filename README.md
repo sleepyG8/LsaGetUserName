@@ -1,10 +1,10 @@
-#Reverse Engineering LsaGetUserName
+## Reverse Engineering LsaGetUserName
 
-#Exploring an Undocumented Windows API
+# Exploring an Undocumented Windows API
 
 While analyzing DLL exports with get-dll-exports, I discovered an interesting function: `LsaGetUserName`. Given its name, I suspected it interacted with `LSA authentication`, so I decided to reverse engineer its behavior.
 
-How: 
+# Getting Started: 
 First things first, I have been doing some undocumented work under the hood of Windows and using `get-dll-exports` my custom export scanner.
 
 seeing a juicy Lsa function like LsaGetUserName I intantly went and started looking up this calls structure and how to get the Username this way. After some searching, nothing, not a single write-up on it on ReactOS. So I used Reacts structure to set
