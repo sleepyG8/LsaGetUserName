@@ -7,12 +7,12 @@ While analyzing DLL exports with get-dll-exports, I discovered an interesting fu
 ## Getting Started: 
 First things first, I have been doing some undocumented work under the hood of Windows and using `get-dll-exports` my custom export scanner.
 
-seeing a juicy Lsa function like LsaGetUserName I intantly went and started looking up this calls structure and how to get the Username this way. After some searching, nothing, not a single write-up on it on ReactOS. So I used Reacts structure to set
+seeing a juicy Lsa function like LsaGetUserName I intantly went and started looking up this calls structure and how to get the Username this way. After some searching, nothing, not a single write-up on it. So I used Reacts structure to set
 
 ```c
 NTSTATUS LsaGetUserName(PUNICODE_STRING*, PUNICODE_STRING*);
 ```
-Upon inspection it reutrns 2 strings, not a string and a size. Which is what through me off. I continued on and did the usual stuff by pulling the function name from Advapi32.dll since I knew it was there from the export table.
+Upon inspection it returns 2 strings, not a string and a size. Which is what through me off. I continued on and did the usual stuff by pulling the function name from Advapi32.dll since I knew it was there from the export table.
 
 ```c
 HMODULE mod = LoadLibrary("Advapi32.dll");
