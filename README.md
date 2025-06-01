@@ -1,5 +1,6 @@
-Reverse Engineering LsaGetUserName
-Exploring an Undocumented Windows API
+#Reverse Engineering LsaGetUserName
+
+#Exploring an Undocumented Windows API
 
 While analyzing DLL exports with get-dll-exports, I discovered an interesting function: `LsaGetUserName`. Given its name, I suspected it interacted with `LSA authentication`, so I decided to reverse engineer its behavior.
 
